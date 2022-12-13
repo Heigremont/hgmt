@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Countdown H</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {
+  color: #FFA300;
+  text-align: center;
+  font-family:Bebas Neue;
+  font-size: 150px;
+  }
+  @font-face {
+    font-family:Bebas Neue;
+    src: url(BebasNeue-Regular.ttf);
+  margin-top: 75px;
+
+}
+svg {
+  color: #FFA300;
+  text-align: center;
+  margin-top: 75px;
+
+}
+</style>
+</head>
+<body style="background-color:#231F20;">
+<svg style="margin-left:auto;margin-right:auto;display:block;" width="200px" height="200px" viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg">
+<circle cx="1" cy="1" r="1" fill="orange"/>
+</svg>
+
+<p id="demo">
+
+<script>
+var countDownDate = new Date("May 6, 2023 20:00:00").getTime();
+var x = setInterval(function() {
+
+  var now = new Date().getTime();
+
+  var distance = countDownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  if (distance < 0) {
+    location.href = 'https://heigremontred.eu.org/';
+  }
+}, 1000);
+</script>
+</p>
+
+</body>
+</html>
